@@ -16,70 +16,72 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+    
     .attribution {
       font-size: 0.6875rem;
       text-align: center;
-      position: relative;
-      top: 140px;
     }
     .attribution a { color: hsl(228, 45%, 44%); }
 
-    *{   
+    * {   
       padding: 0;
       margin: 0;
       box-sizing: border-box;
-      
     }
 
-    header > img {
-      width: 200px;
-      position: relative;
-      bottom: 30px;
-      top: 0px;
-    }
-
+    /* ===== MOBILE FIRST (default) ===== */
     body {
       background-color: hsl(257, 40%, 49%);
-      background-image: url("./images/bg-desktop.svg");
-      background-size: cover;
+      background-image: url("./images/bg-mobile.svg");
+      background-size: contain;
       background-repeat: no-repeat;
-      background-position: center;
-      padding: 70px;
+      background-position: top center;
+      padding: 40px 25px 30px;
+      min-height: 100vh;
+    }
+
+    header img {
+      width: 150px;
+      margin-bottom: 55px;
     }
 
     .main {
       display: flex;
-      gap: 50px;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      position: relative;
-      top: 40px;
+      gap: 50px;
     }
 
     .left {
-      flex: 1; 
+      width: 100%;
+    }
+
+    .main-img {
+      width: 100%;
+      height: auto;
     }
 
     .right {
-      position: relative;
-      bottom: 65px;
-      flex: 1;
-      padding-top: 75px;
+      width: 100%;
+      text-align: center;
     }
 
     .title {
       font-family: 'Poppins', sans-serif;
       color: white;
       font-weight: 600;
-      margin-right: 40px;
+      font-size: 24px;
+      line-height: 1.5;
     }
 
     .text {
-     font-family: 'Open Sans', sans-serif; 
-     color: white;
-     font-weight: 400;
-     padding-top: 25px;
-     padding-bottom: 30px;
+      font-family: 'Open Sans', sans-serif; 
+      color: white;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.6;
+      padding-top: 20px;
+      padding-bottom: 25px;
     }
 
     .button {
@@ -87,30 +89,27 @@
       color: hsl(257, 40%, 49%);
       background-color: white;
       font-weight: 400;
-      border-radius: 20px;
+      font-size: 14px;
+      border-radius: 28px;
       border: none;
-      padding: 10px 55px;
+      padding: 14px 70px;
       cursor: pointer;
       transition: background-color 0.3s, color 0.3s;
+      display: inline-block;
     }
 
-    .main-img {
-      width: 560px;
-      height: 420px;
-    }
-    
-    .logo {
-      position: relative;
+    .button:hover {
       color: white;
+      background-color: hsl(300, 69%, 71%);
     }
 
-    .footer{
-      position: relative;
-      top: 60px;
+    .footer {
+      display: flex;
+      justify-content: center;
+      margin-top: 60px;
     }
 
     .footer .footer-logo {
-      float: right;
       display: flex;
       gap: 15px;
     }
@@ -125,18 +124,77 @@
       border-radius: 50%;
       color: white;
       text-decoration: none;
-      font-size: 16px;
+      font-size: 14px;
       transition: color 0.3s, border-color 0.3s;
-    }
-
-    .right .button:hover {
-      color: white;
-      background-color: hsl(300, 69%, 71%);
     }
 
     .footer .icon-circle:hover {
       color: hsl(300, 69%, 71%);
       border-color: hsl(300, 69%, 71%);
+    }
+
+    /* ===== DESKTOP (min-width: 768px) ===== */
+    @media (min-width: 768px) {
+      body {
+        background-image: url("./images/bg-desktop.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 60px 80px 40px;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      header img {
+        width: 200px;
+        margin-bottom: 0;
+      }
+
+      .main {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 60px;
+        flex: 1;
+        padding: 40px 0;
+      }
+
+      .left {
+        flex: 1.1;
+      }
+
+      .main-img {
+        width: 100%;
+        height: auto;
+      }
+
+      .right {
+        flex: 0.9;
+        text-align: left;
+        padding-top: 0;
+      }
+
+      .title {
+        font-size: 36px;
+        line-height: 1.5;
+      }
+
+      .text {
+        font-size: 16px;
+        padding-top: 20px;
+        padding-bottom: 30px;
+      }
+
+      .button {
+        padding: 16px 70px;
+        font-size: 15px;
+      }
+
+      .footer {
+        justify-content: flex-end;
+        margin-top: 20px;
+      }
     }
     
   </style>
